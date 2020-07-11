@@ -10,10 +10,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import firebaseConfig from './firebase'
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth'
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule} from  '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { HttpClientModule } from '@angular/common/http'
 import { UserService } from './user.service';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
  
 
 @NgModule({
@@ -25,6 +27,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     HttpClientModule
 
   ],
@@ -32,7 +35,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    UserService
+    UserService,
+    Geolocation,
   ],
   bootstrap: [AppComponent]
 })

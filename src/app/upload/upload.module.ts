@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { UploadPageRoutingModule } from './upload-routing.module';
 
 import { UploadPage } from './upload.page';
+import { FileSizeFormatPipe } from './file-size-format.pipe';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { UploadPage } from './upload.page';
     IonicModule,
     UploadPageRoutingModule
   ],
-  declarations: [UploadPage]
+  declarations: [UploadPage, FileSizeFormatPipe]
 })
 export class UploadPageModule {
   

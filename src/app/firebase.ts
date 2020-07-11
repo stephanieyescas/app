@@ -1,13 +1,12 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBqo09kr9OM-z7FPGoL8WvYCt3sEpLs2wE",
-    authDomain: "socialapp-7623c.firebaseapp.com",
-    databaseURL: "https://socialapp-7623c.firebaseio.com",
-    projectId: "socialapp-7623c",
-    storageBucket: "socialapp-7623c.appspot.com",
-    messagingSenderId: "718685208096",
-    appId: "1:718685208096:web:7b8ef43936cf7360c80645",
-    measurementId: "G-91KGC1N6GX"
-  };
-
+  apiKey: "AIzaSyDMgNm91Gq3vtSCH76Tbf2u8PktpcOcKy0",
+  authDomain: "social-app-43b07.firebaseapp.com",
+  databaseURL: "https://social-app-43b07.firebaseio.com",
+  projectId: "social-app-43b07",
+  storageBucket: "social-app-43b07.appspot.com",
+  messagingSenderId: "107294048908",
+  appId: "1:107294048908:web:eb1a5cf77656ffd266b1a9",
+  measurementId: "G-EFBKLZC452"
+}
 
 export default firebaseConfig

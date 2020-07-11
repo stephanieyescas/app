@@ -9,15 +9,6 @@ const routes: Routes = [
     component: TabsPage,
     children:  [
       {
-      path: 'feed',
-      children: [
-        {
-        path: '',
-        loadChildren: () => import('../feed/feed.module').then( m => m.FeedPageModule)
-        }
-      ]
-      },
-      {
       path: 'upload',
       children: [
         {
@@ -27,17 +18,8 @@ const routes: Routes = [
       ]
       },
       {
-      path: 'profile',
-      children: [
-        {
-          path: '',
-          loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
-        }
-      ]
-      },
-      {
       path: '',
-      redirectTo: 'feed',
+      redirectTo: 'upload',
       pathMatch: 'full'
       }
     ]

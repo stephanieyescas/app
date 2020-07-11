@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { AngularFireAuth } from '@angular/fire/auth'
-import { AngularFirestoreModule } from '@angular/fire/firestore/public_api'
-import { UnsubscriptionError } from 'rxjs'
+import { AngularFirestoreModule } from '@angular/fire/firestore/'
+import { first } from  'rxjs/operators'
 
 interface user {
     username: string,
@@ -18,7 +18,20 @@ export class UserService {
         this.user = user
     }
 
-    async getUID() {
-        return this.user.uid
+    async isAuthenticated() {
+        if(this.user) return true
+
+        const user = await this.afAuth.authState.pipe(first()).toPromise()        // converting observable to promise; want value not string
+        if (user) {
+            this.setUser({
+                username: this.user.username,
+                uid: user.uid
+            })
+            return true
+        }
+        return false
+    }
+    getUID() {
+        return this.user.username
     }
 }
